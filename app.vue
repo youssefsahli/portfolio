@@ -1,6 +1,12 @@
 <template>
+  <Head>
+    <Title>
+      Youssef Sahli
+    </Title>
+  </Head>
+  <Navigation />
   <div>
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <NuxtPage />
   </div>
 </template>

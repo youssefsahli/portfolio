@@ -23,11 +23,9 @@
 </template>
 
 <script lang="ts" setup>
-const activeIndex = ref('1')
+const activeIndex: Ref<string> = useState('TabDisplay', () => '0')
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 };
-const lightMode = ref(true)
+const lightMode: Ref<boolean> = useState('LightMode', () => true)
 </script>
-
-<style></style>

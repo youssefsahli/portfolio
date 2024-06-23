@@ -2,11 +2,12 @@
   <ElContainer>
     <PostSideBar />
     <ElContainer>
-      <ElHeader>
-        <PostCrumbs />
-      </ElHeader>
       <ElMain>
-        <ContentDoc />
+        <ContentDoc v-slot="{ doc }">
+          <article>
+            
+          </article>
+        </ContentDoc>
       </ElMain>
     </ElContainer>
   </ElContainer>

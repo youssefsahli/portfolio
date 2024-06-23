@@ -1,6 +1,6 @@
 ---
 navigation:
-    title: 'Racket'
+  title: Racket
 ---
 
 # Racket

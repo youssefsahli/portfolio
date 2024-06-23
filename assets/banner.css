@@ -1,6 +1,5 @@
 .banner {
     display: flex;
     place-content: center center;
-    /* border: 3px solid rebeccapurple; */
     width: 100%;
   }

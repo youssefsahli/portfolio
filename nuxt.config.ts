@@ -16,11 +16,7 @@ export default defineNuxtConfig({
         indexed: true
       }
     },
-    markdown: {
-      tags: {
-        
-      }
-    },
+    
     api: {
       baseURL: '/api/content'
     }

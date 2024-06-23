@@ -1,5 +1,5 @@
 <template>
-  <ElAside width="200px">
+  <ElAside width="200px" v-if="visible">
       <ElScrollbar>
         <ContentList v-slot="{ list }">
           <ElMenu>
@@ -13,3 +13,7 @@
       </ElScrollbar>
     </ElAside>
 </template>
+
+<script>
+  const visible = ref(false)
+</script>

@@ -12,6 +12,9 @@
           <template #empty>
             <el-skeleton :rows="5" animated/>
           </template>
+          <template #not-found>
+            <Empty />
+          </template>
         </ContentDoc>
       </ElMain>
     </ElContainer>

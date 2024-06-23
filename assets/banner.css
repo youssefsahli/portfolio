@@ -1,0 +1,8 @@
+.banner {
+    display: flex;
+    /* padding: 150px; */
+    justify-content: center;
+    align-items: center;
+    /* border: 3px solid rebeccapurple; */
+    width: 100%;
+  }

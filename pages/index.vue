@@ -1,7 +1,5 @@
 <template>
   <ElContainer>
-  <ElText>
-    
-  </ElText>
+  <Banner />
 </ElContainer>
 </template>

@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@element-plus/nuxt",
     "nuxt-icon",
     "nuxt-typed-router",
+    "@nuxthq/studio",
   ],
 
   content: {

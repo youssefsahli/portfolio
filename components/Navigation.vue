@@ -14,6 +14,6 @@
 <script lang="ts" setup>
 const lightMode = useState('LightMode', () => true)
 const activeIndex: Ref<string> = useState('TabDisplay', () => '0')
-</script>
+</script> 
 
 <style></style>

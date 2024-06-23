@@ -3,10 +3,15 @@
     <PostSideBar />
     <ElContainer>
       <ElMain>
-        <ContentDoc v-slot="{ doc }">
-          <article>
-            
-          </article>
+        <ContentDoc>
+          <template  v-slot="{ doc }">
+            <article>
+              <ContentRenderer :value="doc" />
+            </article>
+          </template>
+          <template #empty>
+            <el-skeleton :rows="5" animated/>
+          </template>
         </ContentDoc>
       </ElMain>
     </ElContainer>

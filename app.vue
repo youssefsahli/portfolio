@@ -5,7 +5,6 @@
       Youssef Sahli
     </Title>
   </Head>
-  <!-- <Banner /> -->
   <Navigation />
   <div>
     <NuxtRouteAnnouncer />

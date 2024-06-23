@@ -5,12 +5,21 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxt/devtools",
     "@element-plus/nuxt",
-    "@nuxtjs/color-mode",
     "nuxt-icon",
-    "nuxt-typed-router"
+    "nuxt-typed-router",
   ],
 
   content: {
+    experimental: {
+      search: {
+        indexed: true
+      }
+    },
+    markdown: {
+      tags: {
+        
+      }
+    },
     api: {
       baseURL: '/api/content'
     }

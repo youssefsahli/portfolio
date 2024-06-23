@@ -1,6 +1,5 @@
 <template>
-  <Html :class="getLightMode"
-  />
+  <Html :class="getLightMode" />
   <Head>
     <Title>
       Youssef Sahli
@@ -15,8 +14,9 @@
 </template>
 
 <script setup lang="ts">
-  const lightMode: Ref<boolean> = useState('LightMode')
+  const lightMode = useState('LightMode', () => true)
   const getLightMode = computed(() => {
-    return lightMode.value == true ? "light" : "dark"
+    return lightMode.value ? 'light' : 'dark'
   })
+  import 'element-plus/theme-chalk/dark/css-vars.css'
 </script>

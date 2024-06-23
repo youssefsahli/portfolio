@@ -1,6 +1,9 @@
 <template>
   <div class="banner">
     <pre>
+
+
+   
  ██████████                            █████              
 ░░███░░░░░█                           ░░███               
  ░███  █ ░  █████████████   ████████  ███████   █████ ████
@@ -16,7 +19,3 @@
     </pre>
   </div>
 </template>
-
-<style>
-  @import url('/assets/banner.css');
-</style>

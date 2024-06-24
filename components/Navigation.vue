@@ -6,6 +6,9 @@
       <ElMenuItem index="1" @click="navigateTo('/posts')">
         <Icon name="ph:book-open-fill" />
       </ElMenuItem>
+      <ElMenuItem index="2" @click="navigateTo('/cv')">
+        <Icon name="ph:file-text-fill"/>
+      </ElMenuItem>
       <div class="flex-grow"></div>
       <div class="flex-center">
         <ElInput v-model="searchBox" placeholder="Search posts">

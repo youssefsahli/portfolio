@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     "@nuxthq/studio",
   ],
 
+  css: ['/assets/base.css'],
+
   content: {
     experimental: {
       search: {

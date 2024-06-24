@@ -2,12 +2,11 @@
 title: About me
 description: My Education and Projects
 ---
-
 ## Personal Information
 
 - **Email:** [Youssef dot Sahli at etu dot uca dot fr](mailto\:Youssef.Sahli@etu.uca.fr)
-- **LinkedIn:** [Youssef Sahli](https://www.linkedin.com/in/youssef-sahli)
 - **GitHub:** [youssefsahli](https://github.com/youssefsahli)
+- **CV :** [Download](/cv)
 ## Professional Summary
 
 I am a pharmacist with extensive experience in pharmaceutical analysis and counseling. My expertise spans software development for healthcare applications, pharmaceutical informatics, and graphic design. I am fluent in French, Arabic (Moroccan), and English (US/UK).

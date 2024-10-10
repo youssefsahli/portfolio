@@ -1,0 +1,11 @@
+:root {
+	--neuton-pfx: "fonts/Neuton/Neuton-";
+}
+
+@font-face {
+	font-family: "Neuton";
+	src:
+		url(var(--neuton-pfx)"Regular.ttf") format("truetype") font-weight-normal,
+		url(var(--neuton-pfx)"Bold.ttf") format("truetype") font-weight-bold,
+		url(var(--neuton-pfx)"Italic.ttf") format("truetype") font-italic;
+}

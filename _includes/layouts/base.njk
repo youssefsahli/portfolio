@@ -1,17 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" data-theme="dark">
     <head>
 	<meta charset="utf-8" />
 	<link rel="icon" href="favicon.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Youssef Sahli" />
-	<link rel="stylesheet"
-	      type="text/css"
-	      href="static/bamboo.css" />
+	<link rel="stylesheet" href="static/css/pico.orange.css" />
+	<style>
+	{% include "static/fonts/typography-setup.css" %}
+	</style>
+	<link rel="stylesheet" type="text/css" href="static/css/within.min.css" />
     </head>
     <body>
-	<main>
+	<header class="container">
+	    <nav>
+		<ul>
+		    <li><h1>y. sahli</h1></li>
+		</ul>
+		<ul>
+		    <li>
+			<div role="search">
+			    <input name="search"
+				   type="search"
+				   placeholder="Search" />
+			    <button>Search</button>
+			</div>
+		    </li>
+		</ul>
+	    </nav>
+	    <hr/>
+	</header>
+	<main class="container">
 	    {{ content | safe }}
 	</main>
+	<script defer>
+	function theme_toggle(button) {
+	    button.classList.toggle('theme-toggle--toggled')
+	    let html = document.documentElement
+	    let theme = html.getAttribute('data-theme')
+	    html.setAttribute('data-theme',
+			      theme === 'dark' ? 'light' : 'dark' )
+	}
+	</script>
     </body>
 </html>

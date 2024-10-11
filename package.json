@@ -13,6 +13,9 @@
 	"description": "",
 	"type": "module",
 	"dependencies": {
-		"eleventy-plugin-org": "^1.2.0"
+		"eleventy-plugin-icons": "^4.5.1",
+		"eleventy-plugin-org": "^1.2.0",
+		"feather-icons": "^4.29.2",
+		"theme-toggles": "^4.10.1"
 	}
 }

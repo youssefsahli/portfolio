@@ -17,10 +17,11 @@ title: Search results
 	let resFormStr = "";
 	for (let res of results) {
 		let data = await res.data();
+		console.log(data);
 		resFormStr += `
 <article>
 <header>
-${data.meta.title}
+${data.raw_url}
 </header>
 <a href=${data.url}>
 ${data.excerpt}

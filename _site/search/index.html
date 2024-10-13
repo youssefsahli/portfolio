@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
     <head>
 	<meta charset="utf-8" />
 	<link rel="icon" href="/favicon.ico" />
@@ -36,7 +36,7 @@
 	<main class="container overflow-auto" data-pagefind-body>
 	    <div>
 		
-<div id="search-results" class="container overflow-auto"></div>
+<div id="search-results" aria-busy="true" class="container overflow-auto"></div>
 
 <script js type="module">
 	const pagefind = await import("/pagefind/pagefind.js");
@@ -48,9 +48,14 @@
 	let searchStr = url.searchParams.get("search");
 	const { results } = await pagefind.search(searchStr);
 	let resFormStr = "";
+	if (results.length == 0) {
+		resFormStr = `
+<article>No result was found</article>
+<button onclick="history.back()">Go back</button>
+    `;
+	}
 	for (let res of results) {
 		let data = await res.data();
-		console.log(data);
 		resFormStr += `
 <article>
 <header>
@@ -64,6 +69,7 @@ ${data.excerpt}
 	}
 
 	const resultsElem = document.getElementById("search-results");
+	resultsElem.setAttribute("aria-busy", "false");
 	resultsElem.innerHTML = resFormStr;
 </script>
 
@@ -116,13 +122,20 @@ ${data.excerpt}
 		</div>
 	    </div>
 	</footer>
-	<script>
+	<script js>
+	document.addEventListener("DOMContentLoaded", () => {
+	    let html = document.documentElement
+	    const savedTheme = localStorage.getItem("theme") || "light";
+	    html.setAttribute("data-theme", savedTheme);
+	})
 	function theme_toggle(button) {
 	    button.classList.toggle('theme-toggle--toggled')
 	    let html = document.documentElement
 	    let theme = html.getAttribute('data-theme')
+	    let newTheme = theme === 'dark' ? 'light' : 'dark'
 	    html.setAttribute('data-theme',
-			      theme === 'dark' ? 'light' : 'dark' )
+	    newTheme)
+	    localStorage.setItem("theme", newTheme);
 	}
 	</script>
     </body>

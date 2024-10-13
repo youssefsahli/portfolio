@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
     <head>
 	<meta charset="utf-8" />
 	<link rel="icon" href="/favicon.ico" />
@@ -85,13 +85,20 @@
 		</div>
 	    </div>
 	</footer>
-	<script>
+	<script js>
+	document.addEventListener("DOMContentLoaded", () => {
+	    let html = document.documentElement
+	    const savedTheme = localStorage.getItem("theme") || "light";
+	    html.setAttribute("data-theme", savedTheme);
+	})
 	function theme_toggle(button) {
 	    button.classList.toggle('theme-toggle--toggled')
 	    let html = document.documentElement
 	    let theme = html.getAttribute('data-theme')
+	    let newTheme = theme === 'dark' ? 'light' : 'dark'
 	    html.setAttribute('data-theme',
-			      theme === 'dark' ? 'light' : 'dark' )
+	    newTheme)
+	    localStorage.setItem("theme", newTheme);
 	}
 	</script>
     </body>

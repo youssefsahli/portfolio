@@ -3,7 +3,7 @@ layout: base.njk
 title: Search results
 ---
 
-<div id="search-results" class="container overflow-auto"></div>
+<div id="search-results" aria-busy="true" class="container overflow-auto"></div>
 
 <script js type="module">
 	const pagefind = await import("/pagefind/pagefind.js");
@@ -15,9 +15,14 @@ title: Search results
 	let searchStr = url.searchParams.get("search");
 	const { results } = await pagefind.search(searchStr);
 	let resFormStr = "";
+	if (results.length == 0) {
+		resFormStr = `
+<article>No result was found</article>
+<button onclick="history.back()">Go back</button>
+    `;
+	}
 	for (let res of results) {
 		let data = await res.data();
-		console.log(data);
 		resFormStr += `
 <article>
 <header>
@@ -31,5 +36,6 @@ ${data.excerpt}
 	}
 
 	const resultsElem = document.getElementById("search-results");
+	resultsElem.setAttribute("aria-busy", "false");
 	resultsElem.innerHTML = resFormStr;
 </script>

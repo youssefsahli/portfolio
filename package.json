@@ -13,13 +13,10 @@
 	"description": "",
 	"type": "module",
 	"dependencies": {
-		"@11ty/eleventy-navigation": "^0.3.5",
 		"debug": "^4.3.7",
 		"eleventy-plugin-icons": "^4.5.1",
-		"eleventy-plugin-org": "^1.2.0",
 		"feather-icons": "^4.29.2",
 		"fs": "^0.0.1-security",
-		"path": "^0.12.7",
-		"theme-toggles": "^4.10.1"
+		"path": "^0.12.7"
 	}
 }

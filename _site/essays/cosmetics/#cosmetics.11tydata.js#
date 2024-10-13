@@ -1,6 +1,0 @@
-export default {
-  tags: "cosmetics",
-  eleventyNavigation:{
-    parent
-  }
-};

@@ -14,23 +14,24 @@
 	<header class="container">
 	    <nav>
 		<ul>
-		    <li><h1><a href="/">y. sahli</a></h1></li>
+		    <li><a href="/">y. sahli</a></li>
 		</ul>
 		<ul>
 		    <li>
-			<div role="search">
-			    <input name="search"
-				   type="search"
-				   placeholder="Search" />
-			    
-			</div>
+			<form role="search" action="/search/">
+			    <input name="search" type="search" placeholder="Search" />
+			    <input type="submit" value="Search" />
+			</form>
+			<script>
+			
+			</script>
 		    </li>
 		</ul>
 	    </nav>
 	    
 	    <hr/>
 	</header>
-	<main class="container overflow-auto">
+	<main class="container overflow-auto" data-pagefind-body>
 	    <div>
 		
 
@@ -60,8 +61,8 @@
 		<div class="container" role="group">
 		    <div class="container">
 			<nav aria-label="breadcrumb"
-			     style="--pico-nav-breadcrumb-divider:'◊';font-family:Neon">
-			    <ul><li><a href="/essays">essays</a></li></ul>
+			     style="--pico-nav-breadcrumb-divider:'·';font-family:Neon">
+			    <ul><li>essays</li></ul>
 			</nav>
 		    </div>
 		    <!-- Theme toggle copy-pasted BS -->

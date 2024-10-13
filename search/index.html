@@ -1,0 +1,34 @@
+---
+layout: base.njk
+title: Search results
+---
+
+<div id="search-results" class="container overflow-auto"></div>
+
+<script js type="module">
+	const pagefind = await import("/pagefind/pagefind.js");
+	await pagefind.options({
+		highlightParam: "mark",
+	});
+	pagefind.init();
+	let url = new URL(window.location.href);
+	let searchStr = url.searchParams.get("search");
+	const { results } = await pagefind.search(searchStr);
+	let resFormStr = "";
+	for (let res of results) {
+		let data = await res.data();
+		resFormStr += `
+<article>
+<header>
+${data.meta.title}
+</header>
+<a href=${data.url}>
+${data.excerpt}
+</a>
+</article>
+    `;
+	}
+
+	const resultsElem = document.getElementById("search-results");
+	resultsElem.innerHTML = resFormStr;
+</script>

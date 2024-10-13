@@ -31,6 +31,7 @@ function createVirtualTemplatesForFolders(conf, baseDir, parentKey = null) {
 	let templateData = {
 		layout: "base.njk",
 		eleventyExcludeFromCollections: true,
+		tags: currentKey,
 	};
 	debug(templateData);
 	conf.addTemplate(
@@ -65,9 +66,11 @@ export default function (conf) {
 	conf.addWatchTarget("static/css");
 	conf.addWatchTarget("index.html");
 	conf.addWatchTarget("essays");
+	conf.addWatchTarget("search");
 	conf.addPassthroughCopy("static");
 	conf.addPassthroughCopy("favicon.ico");
 	conf.addPassthroughCopy("essays");
+	conf.addPassthroughCopy("search");
 	conf.setServerPassthroughCopyBehavior("passthrough");
 	createVirtualTemplatesForFolders(conf, "essays", "home");
 	conf.addPlugin(pluginIcons, {
@@ -79,7 +82,7 @@ export default function (conf) {
 			},
 		],
 	});
-	conf.addFilter("urlToBreadcrumbs", function (url) {
+	conf.addFilter("urlToBreadcrumbs", function (url, currentUrl = "") {
 		let parts = url.split("/").filter((part) => part); // Split URL and filter out empty parts
 		let output = "<ul>";
 		let cumulativeUrl = ""; // Track cumulative URL for each breadcrumb
@@ -89,8 +92,12 @@ export default function (conf) {
 
 			// Convert part to human-readable title (e.g., cosmetics -> Cosmetics)
 			let title = part;
-
-			output += `<li><a href="${cumulativeUrl}">${title}</a></li>`;
+			currentUrl = currentUrl.replace(/\/+$/, "");
+			if (cumulativeUrl === currentUrl) {
+				output += `<li>${title}</li>`;
+			} else {
+				output += `<li><a href="${cumulativeUrl}">${title}</a></li>`;
+			}
 		});
 
 		output += "</ul>";

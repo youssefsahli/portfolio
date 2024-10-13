@@ -41,3 +41,7 @@ svg {
 	stroke-linejoin: round;
 	fill: none;
 }
+
+main {
+	--pico-font-family: Xenon;
+}

@@ -27,14 +27,27 @@
 		    </li>
 		</ul>
 	    </nav>
-	    {% if title %}
-	    <div style="text-align:center"> <h6>{{ title }}</h6></div>
-	    {% endif %}
+	    
+	    <div style="text-align:center"> <h6>Introduction to cosmetics</h6></div>
+	    
 	    <hr/>
 	</header>
 	<main class="container overflow-auto">
 	    <div>
-		{{ content | safe }}
+		
+
+<h3>Definition</h3>
+<p>The word &quot;cosmetic&quot; can be used in a couple of different ways:</p>
+<ul>
+<li>
+<p>As an adjective, &quot;cosmetic&quot; refers to something that improves the look and feel of the skin. <em>This could be a cream, a treatment, or anything else that enhances our appearance.</em></p>
+</li>
+<li>
+<p>As a noun, it’s the actual product we use—whether it's skincare creams, makeup, hair products, perfumes, or even nail polish.</p>
+</li>
+</ul>
+
+
 	    </div>
 	</main>
 
@@ -46,7 +59,7 @@
 		    <div class="container">
 			<nav aria-label="breadcrumb"
 			     style="--pico-nav-breadcrumb-divider:'◊';font-family:Neon">
-			    {{ page.url | urlToBreadcrumbs | safe }}
+			    <ul><li><a href="/essays">essays</a></li><li><a href="/essays/cosmetics">cosmetics</a></li><li><a href="/essays/cosmetics/intro">intro</a></li></ul>
 			</nav>
 		    </div>
 		    <!-- Theme toggle copy-pasted BS -->

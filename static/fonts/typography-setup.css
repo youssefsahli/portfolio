@@ -1,18 +1,18 @@
 @font-face {
 	font-family: Neon;
-	src: url("static/fonts/Monaspace/MonaspaceNeonVarVF[wght,wdth,slnt].ttf")
+	src: url("/static/fonts/Monaspace/MonaspaceNeonVarVF[wght,wdth,slnt].ttf")
 		format("truetype");
 }
 
 @font-face {
 	font-family: Radon;
-	src: url("static/fonts/Monaspace/MonaspaceRadonVarVF[wght,wdth,slnt].ttf")
+	src: url("/static/fonts/Monaspace/MonaspaceRadonVarVF[wght,wdth,slnt].ttf")
 		format("truetype");
 }
 
 @font-face {
 	font-family: Xenon;
-	src: url("static/fonts/Monaspace/MonaspaceXenonVarVF[wght,wdth,slnt].ttf")
+	src: url("/static/fonts/Monaspace/MonaspaceXenonVarVF[wght,wdth,slnt].ttf")
 		format("truetype");
 }
 
@@ -25,4 +25,19 @@
 h1 {
 	--pico-font-family: Xenon;
 	--pico-font-weight: 600;
+}
+
+a {
+	text-decoration: none;
+	--pico-font-weight: 600;
+}
+
+svg {
+	width: 24px;
+	height: 24px;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: none;
 }

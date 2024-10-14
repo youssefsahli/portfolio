@@ -18,5 +18,13 @@
 		"feather-icons": "^4.29.2",
 		"fs": "^0.0.1-security",
 		"path": "^0.12.7"
+	},
+	"devDependencies": {
+		"@code-blocks/charts": "^0.1.9",
+		"@code-blocks/eleventy-plugin": "^0.1.8",
+		"eleventy-plugin-robotstxt": "^1.0.0",
+		"eleventy-plugin-toc": "^1.1.5",
+		"prettier": "^3.3.3",
+		"prettier-plugin-jinja-template": "^2.0.0"
 	}
 }

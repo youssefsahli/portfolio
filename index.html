@@ -1,10 +1,38 @@
 ---
 layout: main.njk
+title: Main Page
 ---
 
-<a href="/essays">
-	<article>{% icon "folder" %} All essays</article>
-</a>
-<a href="/essays/cosmetics">
-	<article>{% icon "folder" %} Cosmetics</article>
+<a
+  href="/essays"
+  style="
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+  "
+>
+  <div style="display: flex; align-items: center">
+    <!-- Folder Icon -->
+    <span
+      style="
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        margin-right: 12px;
+        margin-bottom: 3px;
+      "
+    >
+      {% icon "folder" %}
+    </span>
+
+    <!-- Text -->
+    <div style="font-size: 1em; font-weight: 500; line-height: 1.4">
+      All essays
+    </div>
+  </div>
 </a>

@@ -1,0 +1,31 @@
+#+OPTIONS: toc:nil
+#+BEGIN_EXPORT md
+---
+title: Composition
+---
+#+END_EXPORT
+#+TITLE: Composition of cosmetics
+
+* Formulation
+** Ordering
+Each ingredient in a CP is listed in a descending order of concentration.
+The exact concentration is not always written, as to hide the exact recipe.
+> Cosmetics marketed on a retail basis to consumers must have an ingredient list. But under the law, this list cannot be used to make a company disclose “trade secrets.”
+
+** Nomenclature
+Each ingredient have an unique ID on the INCI database. However, some products can have multiple names.  
+
+** Control
+Each commercialized CP has an authorization to be in the market,  supervised by each country’s  regulation entity. Each country or groups of countries (EU) define what ingredient can be used or not.
+
+| Organization | Country   |
+|--------------+-----------|
+| NICNAS       | Australia |
+|              |           |
+
+* Acronyms
+- NICNAS :: Australian Government’s National Industrial Chemicals Notification and Assessment Scheme
+- INCI :: International Nomenclature of Cosmetic Ingredients
+
+* Glossary
+- CP :: Cosmetic product

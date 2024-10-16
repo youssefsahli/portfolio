@@ -1,33 +1,36 @@
 {
-	"name": "youssefsahli",
-	"version": "1.0.0",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "eleventy --serve",
-		"build": "eleventy"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"description": "",
-	"type": "module",
-	"dependencies": {
-		"@11ty/eleventy-fetch": "^4.0.1",
-		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-		"debug": "^4.3.7",
-		"eleventy-plugin-icons": "^4.5.1",
-		"feather-icons": "^4.29.2",
-		"fs": "^0.0.1-security",
-		"path": "^0.12.7"
-	},
-	"devDependencies": {
-		"@code-blocks/charts": "^0.1.9",
-		"@code-blocks/eleventy-plugin": "^0.1.8",
-		"eleventy-plugin-robotstxt": "^1.0.0",
-		"eleventy-plugin-toc": "^1.1.5",
-		"octokit": "^4.0.2",
-		"prettier": "^3.3.3",
-		"prettier-plugin-jinja-template": "^2.0.0"
-	}
+  "name": "youssefsahli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf _site",
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "ELEVENTY_PRODUCTION=true run-s clean build:*",
+    "build:11ty": "echo 'Building...' & npx @11ty/eleventy",
+    "build:index": "echo 'Indexing pages...' & npx -y pagefind --site _site"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {
+    "debug": "^4.3.7",
+    "path": "^0.12.7",
+    "fs": "^0.0.1-security",
+    "feather-icons": "^4.29.2",
+    "@code-blocks/charts": "^0.1.9",
+    "@code-blocks/eleventy-plugin": "^0.1.8",
+    "eleventy-plugin-robotstxt": "^1.0.0",
+    "eleventy-plugin-icons": "^4.5.1",
+    "eleventy-plugin-toc": "^1.1.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "npm-run-all": "^4.1.5",
+    "octokit": "^4.0.2",
+    "prettier": "^3.3.3",
+    "prettier-plugin-jinja-template": "^2.0.0",
+    "rimraf": "^6.0.1"
+  }
 }

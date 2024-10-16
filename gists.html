@@ -9,7 +9,7 @@ title: Gists
   <summary>{{file.desc}}</summary>
   <main>
     <code class="language-{{ file.lang }}" style="white-space: pre-line">
-      {% highlight "lua" %} {{file.content}} {% endhighlight %}
+      {% highlight "lua" %} {{file.content | safe}} {% endhighlight %}
     </code>
   </main>
 </details>

@@ -5,3 +5,6 @@ title: Exporters
 #+END_EXPORT
 #+TITLE: Exporters
 
+| A   | B   |
+|-----+-----|
+| 1 2 | 3 4 |

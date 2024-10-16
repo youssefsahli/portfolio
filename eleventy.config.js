@@ -4,6 +4,7 @@ const debug = (await import("debug")).default("Youssef");
 import pluginIcons from "eleventy-plugin-icons";
 import codeblocks from "@code-blocks/eleventy-plugin";
 import charts from "@code-blocks/charts";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 /**
  * Function to add a virtual template to a folder and its subfolders.
  * @param {string} conf - Eleventy configuration object.
@@ -76,6 +77,7 @@ export default function (conf) {
   conf.setServerPassthroughCopyBehavior("passthrough");
   createVirtualTemplatesForFolders(conf, "essays", "home");
   conf.addPlugin(codeblocks([charts]));
+  conf.addPlugin(syntaxHighlight);
   conf.addPlugin(pluginIcons, {
     sources: [
       {

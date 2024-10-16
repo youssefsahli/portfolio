@@ -1,0 +1,16 @@
+---
+layout: base
+title: Gists
+---
+
+<h6>Gists</h6>
+{% for file in gists.loadedFiles %}
+<details>
+  <summary>{{file.desc}}</summary>
+  <main>
+    <code class="language-{{ file.lang }}" style="white-space: pre-line">
+      {% highlight "lua" %} {{file.content}} {% endhighlight %}
+    </code>
+  </main>
+</details>
+{% endfor %}

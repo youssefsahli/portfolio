@@ -1,3 +1,11 @@
+---
+hide-hr: false
+css:
+  - pico.orange
+  - within.min
+  - typography-setup
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,14 +13,18 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Youssef Sahli" />
-    <link rel="stylesheet" type="text/css" href="/static/css/pico.orange.css" />
-    <link rel="stylesheet" type="text/css" href="/static/css/within.min.css" />
     <link
-      rel="stylesheet"
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
       type="text/css"
-      href="/static/fonts/typography-setup.css"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="/static/css/charts.min.css" />
+    {% for cssfile in css %}
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="/static/css/{{ cssfile }}.css"
+      />
+    {% endfor %}
   </head>
   <body>
     <header class="container">
@@ -35,7 +47,7 @@
           <hgroup><span class="title">{{ title }}</span></hgroup>
         </div>
       {% endif %}
-      <hr />
+      {% if not hide_hr %}<hr />{% endif %}
     </header>
     <main class="container-fluid" data-pagefind-body>
       <div>{{ content | safe }}</div>
@@ -43,7 +55,8 @@
 
     <footer class="container">
       <div class="container">
-        <hr />
+        {% if not hide_hr %}<hr />{% endif %}
+
         <div class="container" role="group">
           <div class="container">
             <nav

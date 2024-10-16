@@ -1,0 +1,119 @@
+@font-face {
+  font-family: Neon;
+  src: url("/static/fonts/Monaspace/MonaspaceNeonVarVF[wght,wdth,slnt].ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: Radon;
+  src: url("/static/fonts/Monaspace/MonaspaceRadonVarVF[wght,wdth,slnt].ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: Xenon;
+  src: url("/static/fonts/Monaspace/MonaspaceXenonVarVF[wght,wdth,slnt].ttf")
+    format("truetype");
+}
+
+:root {
+  --pico-font-family: Neon;
+  --pico-font-weight: 300;
+  font-feature-settings: "liga";
+  --header-glyph: "▽";
+}
+
+h1 {
+  --pico-font-family: Xenon;
+  --pico-font-weight: 600;
+  --pico-font-size: 150%;
+}
+
+h2 {
+  --pico-font-size: 120%;
+  --pico-font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  --pico-font-weight: 600;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+main {
+  --pico-font-family: Xenon;
+  scroll-padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+}
+
+body > header {
+  height: 20vh;
+}
+body > footer {
+  height: 10vh;
+}
+
+h2::before,
+h3::before,
+h4::before {
+  content: var(--header-glyph);
+  margin-right: 10px;
+  font-size: 1em;
+  color: var(--pico-primary);
+}
+
+.title {
+  --pico-font-family: Xenon;
+  --pico-font-weight: 600;
+  --pico-font-size: 150%;
+  font-size: var(--pico-font-size);
+}
+
+hr {
+  height: 1px;
+  border: none;
+  color: var(--pico-primary);
+  background-color: var(--pico-primary);
+}
+
+.container-fluid {
+  width: 80%;
+}
+
+.footref {
+  display: inline-block;
+  width: 20px; /* Adjust size for the circle */
+  height: 20px;
+  line-height: 20px; /* Vertically center the number */
+  border-radius: 50%; /* Makes the element circular */
+  background-color: var(
+    --pico-background-color
+  ); /* Background color of the circle */
+  text-align: center; /* Horizontally center the number */
+  font-size: 0.85em; /* Adjust font size if needed */
+  color: var(--pico-contrast); /* Text color */
+  border: solid;
+  border-width: 1px;
+  border-color: var(--pico-primary-border);
+  margin-left: 5px;
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.footref:hover {
+  background-color: var(--pico-primary-hover); /* Optional hover effect */
+}
+
+span.footref > a {
+  margin-bottom: 10px;
+}

@@ -1,5 +1,6 @@
 ---
 title: Introduction to cosmetics
+readnext: cosmetics/exporters
 ---
 
 ### Definition

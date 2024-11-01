@@ -1,10 +1,10 @@
 ---
-hide-hr: false
+hide_hr: false
+show_searchbar: false
 css:
   - pico.orange
   - within.min
   - typography-setup
-  - prism-laserwave
 ---
 
 <!doctype html>
@@ -23,29 +23,21 @@ css:
     {% endfor %}
   </head>
   <body>
-    <header class="container">
-      <nav>
-        <ul>
-          <li><a href="/">y. sahli</a></li>
-        </ul>
-        <ul>
-          <li>
-            <form role="search" action="/search/">
-              <input name="search" type="search" placeholder="Search" />
-              <input type="submit" value="Search" />
-            </form>
-            <script></script>
-          </li>
-        </ul>
-      </nav>
-      {% if title %}
-        <div style="text-align:center">
-          <hgroup><span class="title">{{ title }}</span></hgroup>
-        </div>
+    {% if title %}
+      <div style="text-align:center;margin-top:40px;">
+        <hgroup><span class="title">{{ title }}</span></hgroup>
+      </div>
+    {% endif %}
+    <header class="container" style="width: 550px;padding-bottom:0;">
+      {% if show_searchbar %}
+        <form role="search" action="/search/">
+          <input name="search" type="search" placeholder="Search" />
+          <input type="submit" value="Search" />
+        </form>
       {% endif %}
-      {% if not hide_hr %}<hr />{% endif %}
     </header>
-    <main class="container-fluid" data-pagefind-body>
+    <main class="container-fluid" style="padding-top:0;" data-pagefind-body>
+      {% if not hide_hr %}<hr />{% endif %}
       <div>{{ content | safe }}</div>
     </main>
 

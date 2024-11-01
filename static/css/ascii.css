@@ -1,0 +1,44 @@
+.ascii-container {
+  width: 50vw;
+  height: 250px;
+  border: 2px solid var(--pico-primary);
+  /* border-inline: 1rem solid; */
+  font-family: Neon;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: #13171f;
+  padding: 10px;
+}
+
+#ascii-art {
+  position: relative;
+  left: -10px;
+  background-color: #13171f;
+  white-space: pre;
+  font-size: 10px;
+}
+
+#main-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main-column a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  margin: 10px 0;
+}
+
+#main-column a svg {
+  margin-right: 8px;
+}
+
+.icon-element {
+  margin: -10px 50px;
+}

@@ -28,61 +28,55 @@
       <link
         rel="stylesheet"
         type="text/css"
-        href="/static/css/prism-laserwave.css"
+        href="/static/css/ascii.css"
       />
     
   </head>
   <body>
-    <header class="container">
-      <nav>
-        <ul>
-          <li><a href="/">y. sahli</a></li>
-        </ul>
-        <ul>
-          <li>
-            <form role="search" action="/search/">
-              <input name="search" type="search" placeholder="Search" />
-              <input type="submit" value="Search" />
-            </form>
-            <script></script>
-          </li>
-        </ul>
-      </nav>
+    
+      <div style="text-align:center;margin-top:40px;">
+        <hgroup><span class="title">Y.sahli</span></hgroup>
+      </div>
+    
+    <header class="container" style="width: 550px;padding-bottom:0;">
       
-        <div style="text-align:center">
-          <hgroup><span class="title">Main Page</span></hgroup>
-        </div>
-      
+        <form role="search" action="/search/">
+          <input name="search" type="search" placeholder="Search" />
+          <input type="submit" value="Search" />
+        </form>
       
     </header>
-    <main class="container-fluid" data-pagefind-body>
+    <main class="container-fluid" style="padding-top:0;" data-pagefind-body>
+      
       <div>
 
-<div class="container-fluid main-icons">
-  
-  <a href="/essays" data-tooltip="essays" data-placement="right">
+<div id="main-column">
+  <div style="display: flex">
     
+    <div class="icon-element">
+      <a href="/essays"> 
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-book-open">
   <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
   <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-</svg>
-  </a>
-  
-  <a href="/gists" data-tooltip="gists" data-placement="right">
+</svg> essays </a>
+    </div>
     
+    <div class="icon-element">
+      <a href="/gists"> 
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-</svg>
-  </a>
-  
-  <a href="/books" data-tooltip="books" data-placement="right">
+</svg> gists </a>
+    </div>
     
+    <div class="icon-element">
+      <a href="/books"> 
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-book">
   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
   <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-</svg>
-  </a>
-  
+</svg> books </a>
+    </div>
+    
+  </div>
 </div>
 
 </div>

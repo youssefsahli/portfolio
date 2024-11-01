@@ -1,6 +1,20 @@
 ---
 layout: base.njk
+css:
+  - essay
 ---
 
+<div class="essay-main">
+  {{ content | safe }}
 
-{{ content | safe }}
+  <footer>
+    {% if readnext %}
+      {% set nexturl = ("/essays/" +  readnext) %}
+      {% set nextPath = (nexturl | urlToPath) %}
+      <a role="button" href="{{ nexturl }}"
+        >Next: {{ nextPath | getFmTitle }}
+        {% icon "arrow-right" %}
+      </a>
+    {% endif %}
+  </footer>
+</div>

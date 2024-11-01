@@ -1,17 +1,22 @@
 ---
 layout: main.njk
-title: Main Page
+title: Y.sahli
 hide_hr: true
+show_searchbar: true
 links:
   - ["essays", "book-open"]
   - ["gists", "github"]
   - ["books", "book"]
+css:
+  - ascii
 ---
 
-<div class="container-fluid main-icons">
-  {% for item in links %}
-  <a href="/{{item[0]}}" data-tooltip="{{item[0]}}" data-placement="right">
-    {% icon item[1] %}
-  </a>
-  {% endfor %}
+<div id="main-column">
+  <div style="display: flex">
+    {% for item in links %}
+    <div class="icon-element">
+      <a href="/{{item[0]}}"> {% icon item[1] %} {{item[0]}} </a>
+    </div>
+    {% endfor %}
+  </div>
 </div>

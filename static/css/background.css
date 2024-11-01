@@ -1,0 +1,5 @@
+html {
+  --bg-path: "/static/background.webp";
+  background-image: var(--bg-path);
+  height: 100%;
+}

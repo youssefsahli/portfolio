@@ -1,9 +1,10 @@
 ---
 layout: base
 title: Gists
+css:
+  - prism-laserwave
 ---
 
-<h6>Gists</h6>
 {% for file in gists.loadedFiles %}
 <details>
   <summary>{{file.desc}}</summary>

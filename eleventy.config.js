@@ -5,6 +5,7 @@ import pluginIcons from "eleventy-plugin-icons";
 import codeblocks from "@code-blocks/eleventy-plugin";
 import charts from "@code-blocks/charts";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import matter from "front-matter";
 /**
  * Function to add a virtual template to a folder and its subfolders.
  * @param {string} conf - Eleventy configuration object.
@@ -20,7 +21,7 @@ function createVirtualTemplatesForFolders(conf, baseDir, parentKey = null) {
   }
 
   const folders = getFolders(baseDir);
-  debug(`Processing folder: ${baseDir} -> Found subfolders: ${folders}`);
+  // debug(`Processing folder: ${baseDir} -> Found subfolders: ${folders}`);
 
   // Set the current folder's key based on its name
   const folderName = path.basename(baseDir);
@@ -29,14 +30,14 @@ function createVirtualTemplatesForFolders(conf, baseDir, parentKey = null) {
   // Add virtual template for the current folder
   const virtualPath = `${baseDir}/index.njk`; // Path for virtual template
 
-  debug(`Creating virtual template for: ${virtualPath}`);
+  // debug(`Creating virtual template for: ${virtualPath}`);
   let templateData = {
     layout: "base.njk",
     eleventyExcludeFromCollections: true,
     tags: currentKey,
     title: folderName.charAt(0).toUpperCase() + folderName.slice(1),
   };
-  debug(templateData);
+  // debug(templateData);
   conf.addTemplate(
     virtualPath,
     `
@@ -76,6 +77,40 @@ export default function (conf) {
   conf.addPassthroughCopy("search");
   conf.setServerPassthroughCopyBehavior("passthrough");
   createVirtualTemplatesForFolders(conf, "essays", "home");
+  conf.addFilter("toISOString", (dateStr) => new Date(dateStr).toISOString());
+  conf.addFilter("getFmTitle", function (fpath) {
+    try {
+      const fullPath = path.resolve(fpath);
+      const content = fs.readFileSync(fullPath, "utf-8");
+
+      const data = matter(content).attributes;
+      debug(data);
+
+      if (data && data.title) {
+        return data.title;
+      } else {
+        return "Untitled";
+      }
+    } catch (error) {
+      debug("Error in getFmTitle filter: ", error);
+      return "Error retrieving file title";
+    }
+  });
+  conf.addFilter("urlToPath", function (urlPath, ext = "md") {
+    // Ensure there's no leading slash and convert the URL to a relative file path
+    let filePath = urlPath;
+    debug(filePath);
+
+    // Remove leading slash if it exists
+    if (filePath.startsWith("/")) {
+      filePath = filePath.substring(1);
+    }
+
+    filePath = `./${filePath}.${ext}`;
+
+    // Return the resolved absolute path or the relative path
+    return path.resolve(filePath);
+  });
   conf.addPlugin(codeblocks([charts]));
   conf.addPlugin(syntaxHighlight);
   conf.addPlugin(pluginIcons, {

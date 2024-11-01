@@ -57,13 +57,6 @@ main {
   min-height: 70vh;
 }
 
-body > header {
-  height: 20vh;
-}
-body > footer {
-  height: 10vh;
-}
-
 h2::before,
 h3::before,
 h4::before {
@@ -116,4 +109,9 @@ hr {
 
 span.footref > a {
   margin-bottom: 10px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
 }
